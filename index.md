@@ -72,7 +72,7 @@
         }
     </style>
     
-    <title>Calculadora de Placas</title>
+
 </head>
 <body>
     <header>
