@@ -157,8 +157,9 @@
         restoComprimento = (larguraPlaca - corteComprimento)
         primeiraPassada = (corteComprimento + (restoComprimento / 2))
 
-        discoLargura = (Math.floor(resLarguraPeca / 4))
-        pecaPorPlaca = (pecaPorPlaca * discoLargura)
+        /*discoLargura = (Math.floor(resLarguraPeca / 1.5))
+        pecaPorPlaca = (pecaPorPlaca * discoLargura)*/
+        pecaPorPlaca = Math.floor(comprimentoPlaca / (resLarguraPeca + 1)) 
         totalPlacas = (resPedido + adicionalPecas) / pecaPorPlaca
         
         window.document.getElementById('placas').innerHTML="Você vai precisar de" + ' ' + Math.ceil(totalPlacas) + ' ' + "placas!"  
@@ -170,9 +171,12 @@
         corteComprimento = (pecaPorPlaca * resComprimentoPeca + 0,20 + discoComprimento)
         restoComprimento = (comprimentoPlaca - corteComprimento)
         primeiraPassada = (corteComprimento + (restoComprimento / 2))
-        discoLargura = (Math.floor(resLarguraPeca / 6))
-        pecaPorPlaca = (pecaPorPlaca * discoLargura)
+
+        /*discoLargura = (Math.floor(resLarguraPeca / 1.5))
+        pecaPorPlaca = (pecaPorPlaca * discoLargura)*/
+        pecaPorPlaca = Math.floor(larguraPlaca / (resLarguraPeca + 1)) * 2
         totalPlacas = (resPedido + adicionalPecas) / pecaPorPlaca
+
         window.document.getElementById('placas').innerHTML="Você vai precisar de" + ' ' + Math.ceil(totalPlacas) + ' ' + "placas!" 
 
     }else if(resComprimentoPeca > 14.7 && resComprimentoPeca < 17.5){
@@ -196,8 +200,9 @@
         restoComprimento = (comprimentoPlaca - corteComprimento)
         primeiraPassada = (corteComprimento + (restoComprimento / 2))
 
-        discoLargura = (Math.floor(resLarguraPeca / 3))
-        pecaPorPlaca = (pecaPorPlaca * discoLargura)
+        /*discoLargura = (Math.floor(resLarguraPeca / 1.5))
+        pecaPorPlaca = (pecaPorPlaca * discoLargura)*/
+        pecaPorPlaca = Math.floor(larguraPlaca / (resLarguraPeca + 1)) * 3
         totalPlacas = (resPedido + adicionalPecas) / pecaPorPlaca
 
 
