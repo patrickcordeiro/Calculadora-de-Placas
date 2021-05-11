@@ -104,7 +104,7 @@
 
     <script>
         function calcular() {
-            const espessuraPlacas = [5, 7, 10]
+            const espessuraPlacas = [5, 7, 8, 10]
             const comprimentoPlaca = 47
             const larguraPlaca = 37
             const adicionalPecas = 30
@@ -138,9 +138,11 @@
             } else if(resEspessura <= 7){
                 document.getElementById('espessura3').innerHTML="Espessura da Placa - Use a placa de" + ' ' + espessuraPlacas[1]
                 
-            }else if (resEspessura <= 10){
+            }else if (resEspessura <= 8){
                 document.getElementById('espessura3').innerHTML="Espessura da Placa - Use a placa de" + ' ' + espessuraPlacas[2]
                 
+            }else if (resEspessura <= 10){
+                document.getElementById('espessura3').innerHTML="Espessura da Placa - Use a placa de" + ' ' + espessuraPlacas[3]
             }else{
                 document.getElementById('espessura3').innerHTML="Espessura da Placa - Valor digitado incorreto!"
                 
