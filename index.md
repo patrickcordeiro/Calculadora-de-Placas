@@ -182,8 +182,9 @@
         restoComprimento = (larguraPlaca - corteComprimento)
         primeiraPassada = (corteComprimento + (restoComprimento / 2))
 
-        discoLargura = (Math.floor(resLarguraPeca / 1.5))
-        pecaPorPlaca = (pecaPorPlaca * discoLargura)
+        /*discoLargura = (Math.floor(resLarguraPeca / 1.5))
+        pecaPorPlaca = (pecaPorPlaca * discoLargura)*/
+        pecaPorPlaca = Math.floor(comprimentoPlaca / (resLarguraPeca + 1)) * 2
         totalPlacas = (resPedido + adicionalPecas) / pecaPorPlaca
 
         window.document.getElementById('placas').innerHTML="Você vai precisar de" + ' ' + Math.ceil(totalPlacas) + ' ' + "placas!" 
