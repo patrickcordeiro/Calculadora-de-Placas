@@ -72,7 +72,7 @@
         }
     </style>
     
-
+    <title>Calculadora de Placas</title>
 </head>
 <body>
     <header>
@@ -90,6 +90,8 @@
         <div id="msg">
             <p id='espessura3'></p>
             <p id='placas'></p>
+            <p id="passada1"></p>
+            <p id="passada2"></p>
         </div>
     </section>
 
@@ -111,12 +113,14 @@
             var totalPlacas = 0
             var restoComprimento = 0
             var primeiraPassada = 0
+            var segundaPassada = 0
             var discoComprimento = 0
             var discoLargura = 0
             var pecaPorPlaca = 0
             var corteComprimento = 0
             var corteLargura = 0
             var totalPecas = 0
+            
 
             var espessura = window.document.getElementById('esp')
             var resEspessura = Number(espessura.value)
@@ -132,16 +136,16 @@
             var resPedido = Number(pedido.value)
             
             for(i = 0;i < espessuraPlacas.length;i++){
-            if (resEspessura <= 5) {
+            if (resEspessura > 0 && resEspessura <= 5) {
                 document.getElementById('espessura3').innerHTML="Espessura da Placa - Use a placa de" + ' ' + espessuraPlacas[0]
                 
-            } else if(resEspessura <= 7){
+            } else if(resEspessura > 0 &&resEspessura <= 7){
                 document.getElementById('espessura3').innerHTML="Espessura da Placa - Use a placa de" + ' ' + espessuraPlacas[1]
                 
-            }else if (resEspessura <= 8){
+            }else if (resEspessura > 0 &&resEspessura <= 8){
                 document.getElementById('espessura3').innerHTML="Espessura da Placa - Use a placa de" + ' ' + espessuraPlacas[2]
                 
-            }else if (resEspessura <= 10){
+            }else if (resEspessura > 0 &&resEspessura <= 10){
                 document.getElementById('espessura3').innerHTML="Espessura da Placa - Use a placa de" + ' ' + espessuraPlacas[3]
             }else{
                 document.getElementById('espessura3').innerHTML="Espessura da Placa - Valor digitado incorreto!"
@@ -156,59 +160,72 @@
         discoComprimento = 0
         corteComprimento = resComprimentoPeca
         
-        restoComprimento = (larguraPlaca - corteComprimento)
-        primeiraPassada = (corteComprimento + (restoComprimento / 2))
+        restoComprimento = larguraPlaca - corteComprimento
+        primeiraPassada = corteComprimento + (restoComprimento / 2)
+        segundaPassada = corteComprimento
 
         /*discoLargura = (Math.floor(resLarguraPeca / 1.5))
         pecaPorPlaca = (pecaPorPlaca * discoLargura)*/
-        pecaPorPlaca = Math.floor(comprimentoPlaca / (resLarguraPeca + 1)) 
+        pecaPorPlaca = Math.floor(comprimentoPlaca / (resLarguraPeca + 1))
         totalPlacas = (resPedido + adicionalPecas) / pecaPorPlaca
         
-        window.document.getElementById('placas').innerHTML="Você vai precisar de" + ' ' + Math.ceil(totalPlacas) + ' ' + "placas!"  
+        window.document.getElementById('placas').innerHTML="Você vai precisar de" + ' ' + Math.ceil(totalPlacas) + ' ' + "placas!" 
+        
+
+        window.document.getElementById("passada1").innerHTML="Primeira passada comprimento:" + ' ' + primeiraPassada.toFixed(1) 
+        window.document.getElementById("passada2").innerHTML="Segunda passada comprimento:" + ' ' + segundaPassada
+        
 
         
     }else if(resComprimentoPeca >= 17.6 && resComprimentoPeca <= 22.5){
         pecaPorPlaca = Math.floor(testeC1)
         discoComprimento = testeC1 / 2
-        corteComprimento = (pecaPorPlaca * resComprimentoPeca + 0,20 + discoComprimento)
-        restoComprimento = (comprimentoPlaca - corteComprimento)
-        primeiraPassada = (corteComprimento + (restoComprimento / 2))
-
-        /*discoLargura = (Math.floor(resLarguraPeca / 1.5))
+        corteComprimento = pecaPorPlaca * resComprimentoPeca + 0,20 + discoComprimento
+        restoComprimento = comprimentoPlaca - corteComprimento
+        primeiraPassada = corteComprimento + (restoComprimento / 2)
+        segundaPassada = corteComprimento + 0,15
+         /*discoLargura = (Math.floor(resLarguraPeca / 1.5))
         pecaPorPlaca = (pecaPorPlaca * discoLargura)*/
         pecaPorPlaca = Math.floor(larguraPlaca / (resLarguraPeca + 1)) * 2
         totalPlacas = (resPedido + adicionalPecas) / pecaPorPlaca
-
         window.document.getElementById('placas').innerHTML="Você vai precisar de" + ' ' + Math.ceil(totalPlacas) + ' ' + "placas!" 
+        window.document.getElementById("passada1").innerHTML="Primeira passada comprimento:" + ' ' + primeiraPassada.toFixed(1)  
+        window.document.getElementById("passada2").innerHTML="Segunda passada comprimento:" + ' ' + segundaPassada
 
     }else if(resComprimentoPeca > 14.7 && resComprimentoPeca < 17.5){
         pecaPorPlaca = Math.floor(testeC2) 
         discoComprimento = (Math.ceil(testeC2 / 2))
-        corteComprimento = (pecaPorPlaca * resComprimentoPeca + 0,20 + discoComprimento)
-        restoComprimento = (larguraPlaca - corteComprimento)
-        primeiraPassada = (corteComprimento + (restoComprimento / 2))
+        corteComprimento = pecaPorPlaca * resComprimentoPeca + 0,20 + discoComprimento
+        restoComprimento = larguraPlaca - corteComprimento
+        primeiraPassada = corteComprimento + (restoComprimento / 2)
+        segundaPassada = corteComprimento + 0,15
 
-        /*discoLargura = (Math.floor(resLarguraPeca / 1.5))
+         /*discoLargura = (Math.floor(resLarguraPeca / 1.5))
         pecaPorPlaca = (pecaPorPlaca * discoLargura)*/
         pecaPorPlaca = Math.floor(comprimentoPlaca / (resLarguraPeca + 1)) * 2
         totalPlacas = (resPedido + adicionalPecas) / pecaPorPlaca
 
-        window.document.getElementById('placas').innerHTML="Você vai precisar de" + ' ' + Math.ceil(totalPlacas) + ' ' + "placas!" 
+        window.document.getElementById('placas').innerHTML="Você vai precisar de" + ' ' + Math.ceil(totalPlacas) + ' ' + "placas!"
+        window.document.getElementById("passada1").innerHTML="Primeira passada comprimento:" + ' ' + primeiraPassada.toFixed(1) 
+        window.document.getElementById("passada2").innerHTML="Segunda passada comprimento:" + ' ' + segundaPassada 
 
     }else if(resComprimentoPeca >= 12 &&  resComprimentoPeca <= 14.7) {
         pecaPorPlaca = Math.floor(testeC1) 
         discoComprimento = (Math.ceil(testeC1 / 2))
-        corteComprimento = (pecaPorPlaca * resComprimentoPeca + 0,20 + discoComprimento)
-        restoComprimento = (comprimentoPlaca - corteComprimento)
-        primeiraPassada = (corteComprimento + (restoComprimento / 2))
+        corteComprimento = (pecaPorPlaca * resComprimentoPeca) + discoComprimento + 0.15  
+        restoComprimento = comprimentoPlaca - corteComprimento
+        primeiraPassada = corteComprimento + (restoComprimento / 2)
+        segundaPassada = corteComprimento 
 
-        /*discoLargura = (Math.floor(resLarguraPeca / 1.5))
+         /*discoLargura = (Math.floor(resLarguraPeca / 1.5))
         pecaPorPlaca = (pecaPorPlaca * discoLargura)*/
         pecaPorPlaca = Math.floor(larguraPlaca / (resLarguraPeca + 1)) * 3
         totalPlacas = (resPedido + adicionalPecas) / pecaPorPlaca
 
 
         window.document.getElementById('placas').innerHTML="Você vai precisar de" + ' ' + Math.ceil(totalPlacas) + ' ' + "placas!"
+        window.document.getElementById("passada1").innerHTML="Primeira passada comprimento:" + ' ' + primeiraPassada.toFixed(1) 
+        window.document.getElementById("passada2").innerHTML="Segunda passada comprimento:" + ' ' + segundaPassada
     }else{
         window.document.getElementById('placas').innerHTML="Valor digitado incorreto!"
     }
