@@ -195,10 +195,10 @@
     }else if(resComprimentoPeca > 14.7 && resComprimentoPeca < 17.5){
         pecaPorPlaca = Math.floor(testeC2) 
         discoComprimento = (Math.ceil(testeC2 / 2))
-        corteComprimento = pecaPorPlaca * resComprimentoPeca + 0,20 + discoComprimento
+        corteComprimento = (pecaPorPlaca * resComprimentoPeca) + 0,15 + discoComprimento
         restoComprimento = larguraPlaca - corteComprimento
         primeiraPassada = corteComprimento + (restoComprimento / 2)
-        segundaPassada = corteComprimento + 0,15
+        segundaPassada = corteComprimento
 
          /*discoLargura = (Math.floor(resLarguraPeca / 1.5))
         pecaPorPlaca = (pecaPorPlaca * discoLargura)*/
