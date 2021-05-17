@@ -207,7 +207,7 @@
 
         window.document.getElementById('placas').innerHTML="Você vai precisar de" + ' ' + Math.ceil(totalPlacas) + ' ' + "placas!"
         window.document.getElementById("passada1").innerHTML="Primeira passada comprimento:" + ' ' + primeiraPassada.toFixed(1) 
-        window.document.getElementById("passada2").innerHTML="Segunda passada comprimento:" + ' ' + segundaPassada 
+        window.document.getElementById("passada2").innerHTML="Segunda passada comprimento:" + ' ' + corteComprimento 
 
     }else if(resComprimentoPeca >= 12 &&  resComprimentoPeca <= 14.7) {
         pecaPorPlaca = Math.floor(testeC1) 
