@@ -101,6 +101,7 @@
             </p>
 
             <p id="step2">
+                <p id="foto"></p>
                 <p id="p1Comp"></p>
                 <p id="p2Comp"></p>
             </p>
@@ -250,7 +251,13 @@
         
         
         window.document.getElementById("step2").innerHTML="<strong>Passo 2: Retificação Comprimento</strong>"
+
+        var img = document.createElement("img")
+        img.src = "placalargura.jpeg"
+        document.getElementById("foto").appendChild(img)
         
+    
+
         window.document.getElementById("p1Comp").innerHTML="Primeira passada comprimento:" + ' ' + primeiraPassada.toFixed(1) 
 
         window.document.getElementById("p2Comp").innerHTML="Segunda passada comprimento:" + ' ' + segundaPassada 
