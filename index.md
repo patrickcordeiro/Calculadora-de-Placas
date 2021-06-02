@@ -255,6 +255,7 @@
 
         var img = document.createElement("img")
         img.src = "placalargurared.jpeg"
+
         
         document.getElementById("foto").appendChild(img)
         
