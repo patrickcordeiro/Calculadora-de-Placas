@@ -73,6 +73,7 @@
     </style>
     
     <title>Calculadora de Placas</title>
+    <meta name="google-site-verification" content="foN88DTqzWXIAdJPP2mPofvdzuOBZ5Ch5rguMVmEjqo" />
 </head>
 <body>
     <header>
